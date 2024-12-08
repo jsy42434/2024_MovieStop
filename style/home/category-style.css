@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background-color: #000;
+    margin: 0px;
+    padding-left:120px;
+    padding-right:120px; /* padding을 0으로 변경하여 전체 화면에 꽉 차게 함 */
+    height: 100%; /* 화면 크기에 맞춰 전체 화면을 사용할 수 있게 함 */
+}
+
+.main-container {
+    width: 100%;
+    padding: 40px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 중앙 정렬 */
+}
+
+.main-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.category-container {
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%; /* 슬라이더를 꽉 채우게 함 */
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* 화면에 꽉 차게 설정 */
+}
+
+.movie-slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    width: 100%; /* 슬라이더가 화면 크기에 맞게 조정되도록 */
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+
+.movie-item {
+    width: 200px;
+    margin: 0 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* 아이템이 축소되지 않도록 */
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+.movie-poster {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie-title {
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+/* 반응형 디자인 적용 */
+@media (max-width: 1400px) {
+    .movie-item {
+        width: 180px; /* 큰 화면에서는 크기를 조금 줄임 */
+    }
+}
+
+@media (max-width: 1200px) {
+    .movie-item {
+        width: 160px; /* 화면이 작아지면 더 작게 설정 */
+    }
+}
+
+@media (max-width: 900px) {
+    .movie-item {
+        width: 140px; /* 모바일 화면에서는 더 작은 크기 */
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-item {
+        width: 120px; /* 모바일 화면에서는 가장 작은 크기 */
+    }
+
+    .main-title {
+        font-size: 20px; /* 제목 크기 조정 */
+    }
+
+    .arrow-left, .arrow-right {
+        font-size: 18px; /* 화살표 버튼 크기 조정 */
+    }
+}

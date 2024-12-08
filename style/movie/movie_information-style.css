@@ -1,0 +1,193 @@
+/* 공통 스타일 */
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.6;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 영화 정보 헤더 */
+.movie-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+}
+
+.movie-header img {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.movie-info h1 {
+    font-size: 2.4rem;
+    color: #f8e71c;
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    color: #d1d1d1;
+}
+
+.movie-info p strong {
+    color: #ffffff;
+}
+
+.favorite-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #371c9b; 
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.favorite-btn:hover {
+    background-color: #4b3ac4;
+    transform: scale(1.05);
+}
+
+/* 줄거리 스타일 */
+.summary {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #292929;
+    border-left: 4px solid #f8e71c;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    line-height: 1.8;
+}
+
+/* 리뷰 스타일 */
+.review {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #292929;
+    border-radius: 8px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f8e71c;
+}
+
+.review-header .nickname {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+/* 리뷰 입력 섹션 */
+.review-header span {
+    font-weight: bold;
+}
+
+.review-textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 4px;
+    resize: none;
+}
+
+.review-textarea::placeholder {
+    color: #777;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #371c9b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #4b3ac4;
+}
+
+/* 별점 섹션 */
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars span {
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stars span.hovered,
+.stars span.selected {
+    color: #f8e71c;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+    .movie-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .movie-header img {
+        max-width: 200px;
+    }
+
+    .movie-info h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .movie-info p {
+        font-size: 1rem;
+    }
+
+    .summary {
+        font-size: 1rem;
+    }
+}

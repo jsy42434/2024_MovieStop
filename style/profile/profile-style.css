@@ -1,0 +1,205 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#profile-container {
+    background-image: url('/photo/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#profile-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+#nickname {
+    font-size: 20px;
+    margin: 0 auto 15px auto;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+#delete-account {
+    padding: 4px 4px;
+    color: #000001;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#profile-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-nav-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #80000000;
+    color: #cecece;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.profile-nav-button:hover {
+    text-decoration: underline;
+}
+
+#divider {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 100%;
+}
+
+.favorite-list {
+    width: 90%;
+    margin: 30px auto;
+    margin-top: 80px;
+}
+
+.favorite-list h2 {
+    margin-bottom: 40px;
+    color: #fff;
+    font-weight: 530;
+    font-size: 30px;
+    text-align: center;
+}
+
+.favorite-list thead {
+    display: none;
+}
+
+.favorite-list th {
+    display: none;
+}
+
+.favorite-list table {
+    width: 50%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+
+.favorite-list tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.favorite-list tr:hover {
+    transform: translateY(-5px);
+    background-color: #2a2a2a;
+}
+
+.poster-cell {
+    margin-right: 30px;
+    margin-left: 20px;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-cell img {
+    width: 180px;
+    height: 270px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+.info-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie-title {
+    font-size: 26px;    
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.movie-genre {
+    font-size: 16px;
+    color: #888;
+}
+
+.rating-cell {
+    margin-left: auto;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-rating {
+    color: #ffd700;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .favorite-list {
+        width: 95%;
+    }
+
+    .favorite-list tr {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .poster-cell {
+        margin: 0 0 15px 0;
+    }
+
+    .info-cell {
+        align-items: center;
+    }
+
+    .movie-title {
+        text-align: center;
+    }
+
+    .movie-genre {
+        text-align: center;
+    }
+
+    .rating-cell {
+        padding-right: 0;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,231 @@
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 60px; /* 네비게이션 바 높이만큼 상단 여백 추가 */
+}
+
+/* 네비게이션 바 */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌우 양끝 정렬 */
+  width: 100%;
+  padding: 0 40px; /* 좌우 여백 늘림 */
+}
+
+/* 왼쪽 요소들 수정 */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* 햄버거와 로고 사이 간격 */
+}
+
+/* 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 60px; /* 네비게이션 바와 같은 높이 */
+  text-decoration: none; /* 링크 밑줄 제거 */
+}
+
+.logo:hover {
+  opacity: 0.8; /* 호버 효과 추가 */
+}
+
+.logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* 햄버거 메뉴 */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger:hover {
+  opacity: 0.8;
+}
+
+.genre-item {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.genre-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10000;
+}
+
+.genre-submenu {
+  position: fixed;
+  left: 200px;
+  top: 60px;
+  display: none;
+  background-color: #4a2db3;
+  min-width: 150px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+}
+
+.genre-submenu.show {
+  display: block; /* 활성화 시 보이도록 설정 */
+}
+
+.genre-submenu li {
+  display: block;
+  width: 100%;
+}
+
+.genre-submenu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.genre-submenu li a:hover {
+  background-color: #5643b4;
+}
+
+
+#menu {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  max-width: 200px;
+  background-color: #371c9b;
+  height: calc(100vh - 60px);
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+}
+
+#menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu .menu-text {
+  padding: 20px;  /* 글과 메뉴 간의 여백 */
+    color: white;    /* 글자 색 */
+    font-size: 12px; /* 글자 크기 */
+    margin-top: 490px; /* 메뉴와 글 사이의 간격 */
+}
+
+#menu ul {
+  list-style-type: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+#menu ul li {
+  margin: 10px 0;
+  border-bottom: 1px solid white;
+}
+
+#menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block; /* 항목을 블록 요소로 만들어 세로로 나열되게 */
+  padding: 10px 20px; /* 충분한 여백 추가 */
+  transition: background-color 0.3s ease; /
+}
+
+#menu ul li a:hover {
+  background-color: #5643b4;
+
+  opacity: 0.8;
+}
+
+/* 로그인 상태 */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 버튼 사이 간격 조정 */
+  margin-right: 0; /* 오른쪽 끝에 붙이기 */
+}
+
+.user-id {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.mypage-btn, 
+.logout-btn, 
+.login-btn, 
+.signup-btn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.mypage-btn {
+  background-color: #371c9b;
+  border-color: #371c9b;
+}
+
+.logout-btn {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.mypage-btn:hover, 
+.logout-btn:hover, 
+.login-btn:hover, 
+.signup-btn:hover {
+  opacity: 0.8;
+}
+
+/* 비로그인 상태 버튼 */
+.login-btn {
+  background-color: transparent;
+}
+
+.signup-btn {
+  background-color: #371c9b;
+  border-color: #371c9b;
+}
+
